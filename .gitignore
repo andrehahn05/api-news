@@ -1,0 +1,16 @@
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+build/
+temp/
+.env
+coverage
+ormconfig.json
+dist
+uploads/*
+!uploads/
+logs
+package-lock.json
+*.log
+npm-debug.log*
