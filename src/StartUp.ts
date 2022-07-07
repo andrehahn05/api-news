@@ -1,11 +1,14 @@
-import  express  from "express";
+import "dotenv/config";
+import express from "express";
+import "./mongoose/connection";
 
 class StartUp {
   public app: express.Application;
 
-  constructor(){
+  constructor() {
     this.app = express();
   }
 }
 
-export default new StartUp
+export default new StartUp();
+
