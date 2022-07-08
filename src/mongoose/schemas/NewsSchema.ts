@@ -1,4 +1,4 @@
-import mongoose, { Schema, } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 interface INews {
   hat: string;
@@ -6,7 +6,7 @@ interface INews {
   text: string;
   author: string;
   img: string;
-  publishDate:Date;
+  publishDate: Date;
   link: string;
   active: boolean;
 }
@@ -19,7 +19,7 @@ const NewsSchema = new Schema<INews>({
   img: { type: String },
   publishDate: { type: Date },
   link: { type: String },
-  active: { type: Boolean }
+  active: { type: Boolean },
 });
 
-export default mongoose.model<INews>('News',NewsSchema);
+export default mongoose.model<INews>('News', NewsSchema);

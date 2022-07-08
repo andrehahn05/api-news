@@ -1,6 +1,6 @@
-import "dotenv/config";
-import express from "express";
-import "./mongoose/connection";
+import 'dotenv/config';
+import express from 'express';
+import './mongoose/connection';
 
 class StartUp {
   public app: express.Application;
@@ -11,4 +11,3 @@ class StartUp {
 }
 
 export default new StartUp();
-
