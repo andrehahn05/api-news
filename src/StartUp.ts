@@ -2,7 +2,8 @@ import 'dotenv/config';
 import 'express-async-errors';
 import express, { NextFunction, Request, Response } from 'express';
 import './connection';
-import newsRouter from '@modules/news/infra/http/routes/news.routes';
+// import newsRouter from '@modules/news/infra/http/routes/news.routes';
+import routes from './routes';
 import AppError from './errors/AppError';
 
 class StartUp {
@@ -11,12 +12,12 @@ class StartUp {
   constructor() {
     this.app = express();
     this.middleware();
-    this.newsRoutes();
+    this.routes();
     this.appError();
   }
 
-  newsRoutes() {
-    this.app.use(newsRouter);
+  routes() {
+    this.app.use(routes);
   }
 
   middleware() {
