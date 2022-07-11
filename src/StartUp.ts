@@ -1,12 +1,45 @@
 import 'dotenv/config';
-import express from 'express';
-import './mongoose/connection';
+import 'express-async-errors';
+import express, { NextFunction, Request, Response } from 'express';
+import './connection';
+import newsRouter from '@modules/news/infra/http/routes/news.routes';
+import AppError from './errors/AppError';
 
 class StartUp {
   public app: express.Application;
 
   constructor() {
     this.app = express();
+    this.middleware();
+    this.newsRoutes();
+    this.appError();
+  }
+
+  newsRoutes() {
+    this.app.use(newsRouter);
+  }
+
+  middleware() {
+    this.app.use(express.json());
+  }
+
+  appError() {
+    this.app.use(
+      (error: Error, req: Request, resp: Response, next: NextFunction) => {
+        if (error instanceof AppError) {
+          return resp.status(error.statusCode).json({
+            status: 'error',
+            message: error.message,
+          });
+        }
+        console.log(error);
+
+        return resp.status(500).json({
+          status: 'error',
+          message: 'Internal server error',
+        });
+      },
+    );
   }
 }
 

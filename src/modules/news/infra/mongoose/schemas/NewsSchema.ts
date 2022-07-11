@@ -1,17 +1,8 @@
 import mongoose, { Schema } from 'mongoose';
+import { INews } from '@modules/news/domain/models/INews';
 
-interface INews {
-  hat: string;
-  title: string;
-  text: string;
-  author: string;
-  img: string;
-  publishDate: Date;
-  link: string;
-  active: boolean;
-}
 
-const NewsSchema = new Schema<INews>({
+const NewsSchema = new Schema({
   hat: { type: String },
   title: { type: String },
   text: { type: String },
@@ -22,4 +13,5 @@ const NewsSchema = new Schema<INews>({
   active: { type: Boolean },
 });
 
-export default mongoose.model<INews>('News', NewsSchema);
+export default mongoose.model('News', NewsSchema);
+
