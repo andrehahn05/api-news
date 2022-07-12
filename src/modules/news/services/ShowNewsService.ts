@@ -10,7 +10,6 @@ class ShowNewsService {
     if (!news) {
       throw new AppError('News not found');
     }
-
     return news;
   }
 }
