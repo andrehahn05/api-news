@@ -6,7 +6,6 @@ interface IUpdateNews {
   _id: string;
   data: INews;
 }
-
 class UpdateNewsService {
   public async execute({ _id, ...data }: IUpdateNews): Promise<INews> {
     const news = await NewsSchema.findByIdAndUpdate(
