@@ -2,7 +2,6 @@ import 'dotenv/config';
 import 'express-async-errors';
 import express, { NextFunction, Request, Response } from 'express';
 import './connection';
-// import newsRouter from '@modules/news/infra/http/routes/news.routes';
 import routes from './routes';
 import AppError from './errors/AppError';
 
@@ -33,7 +32,9 @@ class StartUp {
             message: error.message,
           });
         }
-        console.log(error);
+        next();
+
+        // console.log(error);
 
         return resp.status(500).json({
           status: 'error',

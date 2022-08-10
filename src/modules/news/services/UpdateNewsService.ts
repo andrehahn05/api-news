@@ -1,5 +1,5 @@
 import AppError from 'src/errors/AppError';
-import { INews } from '../domain/models/INews';
+import { INews } from '../models/INews';
 import NewsSchema from '@modules/news/infra/mongoose/schemas/NewsSchema';
 
 interface IUpdateNews {

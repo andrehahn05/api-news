@@ -1,5 +1,5 @@
-import { Response } from 'express';
-import { INews } from '@modules/news/domain/models/INews';
+
+import { INews } from '@modules/news/models/INews';
 import NewsSchema from '@modules/news/infra/mongoose/schemas/NewsSchema';
 import AppError from 'src/errors/AppError';
 
@@ -10,9 +10,8 @@ class NewsCreateService {
     if (exitsNews) {
       throw new AppError('News is already registered.');
     }
-
+    
     const news = await NewsSchema.create({ ...data });
-    console.log(news);
 
     return news;
   }

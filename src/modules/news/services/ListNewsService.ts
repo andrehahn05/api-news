@@ -1,4 +1,4 @@
-import { INews } from '@modules/news/domain/models/INews';
+import { INews } from '@modules/news/models/INews';
 import AppError from 'src/errors/AppError';
 import NewsSchema from '../infra/mongoose/schemas/NewsSchema';
 

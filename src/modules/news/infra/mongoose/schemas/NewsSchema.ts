@@ -1,5 +1,5 @@
 import mongoose, { Schema } from 'mongoose';
-import { INews } from '@modules/news/domain/models/INews';
+import { INews } from '@modules/news/models/INews';
 
 
 const NewsSchema = new Schema({

@@ -1,5 +1,5 @@
 import AppError from 'src/errors/AppError';
-import { INews } from '@modules/news/domain/models/INews';
+import { INews } from '@modules/news/models/INews';
 import NewsSchema from '@modules/news/infra/mongoose/schemas/NewsSchema';
 class DeleteNewsService {
   public async execute(_id: string): Promise<string | void> {
