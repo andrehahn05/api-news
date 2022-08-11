@@ -1,5 +1,5 @@
 import { INews } from '@modules/news/models/INews';
-import AppError from 'src/errors/AppError';
+import AppError from 'src/shared/errors/AppError';
 import NewsSchema from '../infra/mongoose/schemas/NewsSchema';
 
 class  ListNewsService {

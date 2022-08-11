@@ -1,4 +1,4 @@
-import startUp from './StartUp';
+import startUp from '../../../StartUp';
 
 let port = process.env.PORT || 3001;
 

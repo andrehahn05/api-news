@@ -1,7 +1,7 @@
 
 import { INews } from '@modules/news/models/INews';
 import NewsSchema from '@modules/news/infra/mongoose/schemas/NewsSchema';
-import AppError from 'src/errors/AppError';
+import AppError from 'src/shared/errors/AppError';
 
 class NewsCreateService {
   public async execute({ ...data }: INews): Promise<INews> {

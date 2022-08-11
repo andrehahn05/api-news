@@ -33,7 +33,7 @@ class NewsController {
 
   public async update(req: Request, res: Response): Promise<Response> {
     let data = req.body;
-    const _id = req.params.id;
+    const _id  = req.params.id;
 
     const newsUpdate = new UpdateNewsService();
 
