@@ -8,15 +8,15 @@ import DeleteNewsService from '@modules/news/services/DeleteNewsService';
 class NewsController {
   public async store(req: Request, res: Response): Promise<Response> {
     const data = req.body;
-    const createNews = new CreateNewsService();
-    const news = await createNews.execute({ ...data });
+
+    const news = await CreateNewsService.execute({ ...data });
+    
     return res.json(news);
   }
 
   public async index(req: Request, res: Response): Promise<Response> {
-    const listNews = new ListNewsService();
 
-    const news = await listNews.execute();
+    const news = await ListNewsService.execute();
 
     return res.json(news);
   }
@@ -24,9 +24,7 @@ class NewsController {
   public async show(req: Request, res: Response): Promise<Response> {
     const _id = req.params.id;
 
-    const newsShow = new ShowNewsService();
-
-    const news = await newsShow.execute(_id);
+    const news = await ShowNewsService.execute(_id);
 
     return res.json(news);
   }
@@ -35,9 +33,7 @@ class NewsController {
     let data = req.body;
     const _id  = req.params.id;
 
-    const newsUpdate = new UpdateNewsService();
-
-    const news = await newsUpdate.execute({ _id, ...data });
+    const news = await UpdateNewsService.execute({ _id, ...data });
 
     return res.json(news);
   }
@@ -45,12 +41,10 @@ class NewsController {
   public async delete(req: Request, res: Response): Promise<Response> {
     const _id = req.params.id;
 
-    const del = new DeleteNewsService();
-
-    await del.execute(_id);
+    await DeleteNewsService.execute(_id);
 
     return res.status(200).send();
   }
 }
 
-export default NewsController;
+export default new NewsController;

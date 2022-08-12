@@ -1,6 +1,7 @@
 import 'dotenv/config';
-import 'express-async-errors';
 import express, { NextFunction, Request, Response } from 'express';
+import 'express-async-errors';
+import { errors } from 'celebrate';
 import './shared/infra/http/connection';
 import routes from './shared/infra/http/routes';
 import AppError from './shared/errors/AppError';
@@ -12,7 +13,9 @@ class StartUp {
     this.app = express();
     this.middleware();
     this.routes();
+    this.err();
     this.appError();
+    
   }
 
   routes() {
@@ -21,6 +24,10 @@ class StartUp {
 
   middleware() {
     this.app.use(express.json());
+  }
+  
+  err() {
+    this.app.use(errors());
   }
 
   appError() {
@@ -32,9 +39,9 @@ class StartUp {
             message: error.message,
           });
         }
-        next();
+        // next();
 
-        // console.log(error);
+        console.log(error);
 
         return resp.status(500).json({
           status: 'error',

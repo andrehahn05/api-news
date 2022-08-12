@@ -13,5 +13,5 @@ class  ListNewsService {
   }
 }
 
-export default  ListNewsService;
+export default new ListNewsService;
                   

@@ -17,4 +17,4 @@ class NewsCreateService {
   }
 }
 
-export default NewsCreateService;
+export default new  NewsCreateService;

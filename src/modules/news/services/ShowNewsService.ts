@@ -18,4 +18,4 @@ class ShowNewsService {
   }
 }
 
-export default ShowNewsService;
+export default new ShowNewsService;

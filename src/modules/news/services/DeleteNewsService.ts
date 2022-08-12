@@ -13,4 +13,4 @@ class DeleteNewsService {
   }
 }
 
-export default DeleteNewsService;
+export default new DeleteNewsService;

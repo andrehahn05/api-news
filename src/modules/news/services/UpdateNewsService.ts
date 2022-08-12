@@ -21,4 +21,4 @@ class UpdateNewsService {
   }
 }
 
-export default UpdateNewsService;
+export default new UpdateNewsService;
