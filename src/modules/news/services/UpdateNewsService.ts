@@ -1,6 +1,6 @@
 import AppError from 'src/shared/errors/AppError';
 import { INews } from '../models/INews';
-import NewsSchema from '@modules/news/infra/mongoose/schemas/NewsSchema';
+import NewsSchema from '@src/modules/news/infra/mongoose/schema/NewsSchema';
 
 interface IUpdateNews {
   _id: string;

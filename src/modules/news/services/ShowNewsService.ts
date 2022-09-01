@@ -1,6 +1,6 @@
 import AppError from 'src/shared/errors/AppError';
 import { INews } from '@modules/news/models/INews';
-import NewsSchema from '@modules/news/infra/mongoose/schemas/NewsSchema';
+import NewsSchema from '@src/modules/news/infra/mongoose/schema/NewsSchema';
 
 class ShowNewsService {
   public async execute(_id: string): Promise<INews | any> {
