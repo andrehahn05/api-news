@@ -5,6 +5,7 @@ node_modules/
 build/
 temp/s
 .env
+.default.json
 coverage
 ormconfig.json
 dist
