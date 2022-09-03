@@ -1,5 +1,5 @@
 export interface INews {
-  _id?:string | any;
+  _id?:string|any;
   hat?: string | any;
   title?: string;
   text?: string;
