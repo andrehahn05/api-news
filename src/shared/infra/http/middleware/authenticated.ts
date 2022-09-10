@@ -32,7 +32,6 @@ export function authenticated(
 
     next();
   } catch {
-    console.log(token);
     throw new AppError(' Invalid Jwt token');
   }
 }
