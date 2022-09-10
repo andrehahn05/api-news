@@ -17,20 +17,19 @@ export function authenticated(
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
-    console.log(authHeader)
     throw new AppError('Token not provided.', 401);
   }
 
   const [, token] = authHeader.split(' ');
-  
+
   try {
     const decoded = verify(token, authConfig.jwt.secret as Secret);
-    
+
     const { sub } = decoded as ITokenPayload;
     req.user = {
       id: sub,
     };
-    
+
     next();
   } catch {
     console.log(token);
