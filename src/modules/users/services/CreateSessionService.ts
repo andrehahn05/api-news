@@ -16,7 +16,7 @@ class CreateSessionService {
     const user = await UserSchema.findOne({
       email: email,
     });
-    console.log(user);
+  
     if (!user) {
       throw new AppError('Incorrect email/password !', 401);
     }
