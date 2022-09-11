@@ -18,32 +18,12 @@ userRouter.post(
 );
 
 userRouter.use(authenticated);
-userRouter.get(
-  '/show/:id',
-  celebrate({
-    [Segments.PARAMS]: {
-      id: Joi.string().required(),
-    },
-  }),
-  userController.show,
-);
-
-userRouter.delete(
-  '/:id',
-  celebrate({
-    [Segments.PARAMS]: {
-      id: Joi.string().required(),
-    },
-  }),
-  userController.delete,
-);
+userRouter.delete('/del', userController.delete);
+userRouter.get('/show', userController.show);
 
 userRouter.put(
-  '/:id',
+  '/put',
   celebrate({
-    [Segments.PARAMS]: {
-      id: Joi.string().required(),
-    },
     [Segments.BODY]: {
       name: Joi.string(),
       email: Joi.string().email(),
