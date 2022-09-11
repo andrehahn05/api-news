@@ -16,9 +16,10 @@ class UserController {
 
     return res.json({user:user.display()})
   }
-
+  
   public async show(req:Request, res:Response):Promise<Response | IUser>{
-    const _id = req.params.id ;
+  
+    const _id = req.user.id;
 
     const user = await ShowUserService.execute(_id);
 
@@ -27,7 +28,8 @@ class UserController {
   }
   
   public async delete(req:Request, res:Response):Promise<Response>{
-    const _id = req.params.id;
+
+    const _id = req.user.id;
 
     await DeleteUserService.execute(_id);
 
@@ -36,7 +38,8 @@ class UserController {
   }
 
   public async update(req:Request,res:Response):Promise<Response>{
-    const _id = req.params.id;
+    
+    const _id = req.user.id;
     let data = req.body;
 
     const user = await UpdateUserService.execute(_id,{...data})
